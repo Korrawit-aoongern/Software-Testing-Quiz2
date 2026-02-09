@@ -1,0 +1,824 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.1 (Python 3.14.3 on win32)" generated="2026-02-09T15:25:58.857667" rpa="false" schemaversion="5">
+<suite id="s1" name="testRF02" source="C:\Users\Classroom\Desktop\New folder\Software-Testing-_Quiz02\testRF02.robot">
+<kw name="Open Browser To Login Page" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-02-09T15:25:59.133747" level="INFO">Opening browser 'headlesschrome' to base url 'https://chiangmuan.igovapp.com/login'.</msg>
+<arg>${LOGIN_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-02-09T15:25:59.133416" elapsed="2.374014"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-02-09T15:26:01.507702" elapsed="0.030935"/>
+</kw>
+<status status="PASS" start="2026-02-09T15:25:59.132624" elapsed="2.406168"/>
+</kw>
+<test id="s1-t1" name="F01.1TC1 Login With Valid Email And Password" line="63">
+<kw name="Input Email">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-02-09T15:26:01.540358" level="INFO">Typing text 'jane@example.com' into text field '//*[@id="login_email"]'.</msg>
+<arg>${EMAIL_INPUT}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-09T15:26:01.539947" elapsed="0.112955"/>
+</kw>
+<arg>${VALID_EMAIL}</arg>
+<status status="PASS" start="2026-02-09T15:26:01.539571" elapsed="0.113472"/>
+</kw>
+<kw name="Input Password">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-02-09T15:26:01.654054" level="INFO">Typing text 'Password123' into text field '//*[@id="login_password"]'.</msg>
+<arg>${PASSWORD_INPUT}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-09T15:26:01.653795" elapsed="0.087342"/>
+</kw>
+<arg>${VALID_PASSWORD}</arg>
+<status status="PASS" start="2026-02-09T15:26:01.653438" elapsed="0.087829"/>
+</kw>
+<kw name="Click Login">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-02-09T15:26:01.742083" level="INFO">Clicking button '//*[@id="page-login"]/div/main/div[2]/div/section[1]/div[2]/form/div/div[2]/button'.</msg>
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-09T15:26:01.741852" elapsed="0.092080"/>
+</kw>
+<status status="PASS" start="2026-02-09T15:26:01.741557" elapsed="0.092506"/>
+</kw>
+<kw name="Login Should Be Successful">
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-02-09T15:26:02.054707" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-13.png"&gt;&lt;img src="selenium-screenshot-13.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-02-09T15:26:02.054916" level="FAIL">Page should have contained text 'ยินดีต้อนรับ' but did not.</msg>
+<arg>ยินดีต้อนรับ</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="FAIL" start="2026-02-09T15:26:01.834730" elapsed="0.222281">Page should have contained text 'ยินดีต้อนรับ' but did not.</status>
+</kw>
+<status status="FAIL" start="2026-02-09T15:26:01.834424" elapsed="0.222793">Page should have contained text 'ยินดีต้อนรับ' but did not.</status>
+</kw>
+<status status="FAIL" start="2026-02-09T15:26:01.538899" elapsed="0.518715">Page should have contained text 'ยินดีต้อนรับ' but did not.</status>
+</test>
+<test id="s1-t2" name="F01.1TC2 Login With Invalid Password" line="69">
+<kw name="Input Email">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-02-09T15:26:02.059649" level="INFO">Typing text 'jane@example.com' into text field '//*[@id="login_email"]'.</msg>
+<arg>${EMAIL_INPUT}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-09T15:26:02.059394" elapsed="0.094494"/>
+</kw>
+<arg>${VALID_EMAIL}</arg>
+<status status="PASS" start="2026-02-09T15:26:02.059051" elapsed="0.094970"/>
+</kw>
+<kw name="Input Password">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-02-09T15:26:02.154955" level="INFO">Typing text 'Wrong123' into text field '//*[@id="login_password"]'.</msg>
+<arg>${PASSWORD_INPUT}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-09T15:26:02.154700" elapsed="0.065316"/>
+</kw>
+<arg>${INVALID_PASSWORD}</arg>
+<status status="PASS" start="2026-02-09T15:26:02.154349" elapsed="0.065795"/>
+</kw>
+<kw name="Click Login">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-02-09T15:26:02.221013" level="INFO">Clicking button '//*[@id="page-login"]/div/main/div[2]/div/section[1]/div[2]/form/div/div[2]/button'.</msg>
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-09T15:26:02.220784" elapsed="0.066872"/>
+</kw>
+<status status="PASS" start="2026-02-09T15:26:02.220480" elapsed="0.067298"/>
+</kw>
+<kw name="Login Button Should Show Invalid Message">
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2026-02-09T15:26:02.288649" level="INFO">Verifying element '//*[@id="page-login"]/div/main/div[2]/div/section[1]/div[2]/form/div/div[2]/button' contains exact text 'Invalid Login. Try again.'.</msg>
+<msg time="2026-02-09T15:26:02.434325" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-14.png"&gt;&lt;img src="selenium-screenshot-14.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-02-09T15:26:02.434483" level="FAIL">The text of element '//*[@id="page-login"]/div/main/div[2]/div/section[1]/div[2]/form/div/div[2]/button' should have been 'Invalid Login. Try again.' but it was 'Verifying...'.</msg>
+<arg>${LOGIN_BUTTON}</arg>
+<arg>${LOGIN_TEXT_INVALID}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="FAIL" start="2026-02-09T15:26:02.288379" elapsed="0.146858">The text of element '//*[@id="page-login"]/div/main/div[2]/div/section[1]/div[2]/form/div/div[2]/button' should have been 'Invalid Login. Try again.' but it was 'Verifying...'.</status>
+</kw>
+<status status="FAIL" start="2026-02-09T15:26:02.288084" elapsed="0.147332">The text of element '//*[@id="page-login"]/div/main/div[2]/div/section[1]/div[2]/form/div/div[2]/button' should have been 'Invalid Login. Try again.' but it was 'Verifying...'.</status>
+</kw>
+<status status="FAIL" start="2026-02-09T15:26:02.058523" elapsed="0.377260">The text of element '//*[@id="page-login"]/div/main/div[2]/div/section[1]/div[2]/form/div/div[2]/button' should have been 'Invalid Login. Try again.' but it was 'Verifying...'.</status>
+</test>
+<test id="s1-t3" name="F01.1TC3 Login With Unregistered Email" line="75">
+<kw name="Input Email">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-02-09T15:26:02.437783" level="INFO">Typing text 'unknown@test.com' into text field '//*[@id="login_email"]'.</msg>
+<arg>${EMAIL_INPUT}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-09T15:26:02.437519" elapsed="0.079403"/>
+</kw>
+<arg>unknown@test.com</arg>
+<status status="PASS" start="2026-02-09T15:26:02.437204" elapsed="0.079845"/>
+</kw>
+<kw name="Input Password">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-02-09T15:26:02.518021" level="INFO">Typing text 'Password123' into text field '//*[@id="login_password"]'.</msg>
+<arg>${PASSWORD_INPUT}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-09T15:26:02.517764" elapsed="0.073164"/>
+</kw>
+<arg>${VALID_PASSWORD}</arg>
+<status status="PASS" start="2026-02-09T15:26:02.517399" elapsed="0.073683"/>
+</kw>
+<kw name="Click Login">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-02-09T15:26:02.591908" level="INFO">Clicking button '//*[@id="page-login"]/div/main/div[2]/div/section[1]/div[2]/form/div/div[2]/button'.</msg>
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-09T15:26:02.591677" elapsed="0.069846"/>
+</kw>
+<status status="PASS" start="2026-02-09T15:26:02.591367" elapsed="0.070279"/>
+</kw>
+<kw name="Login Button Should Show Invalid Message">
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2026-02-09T15:26:02.662552" level="INFO">Verifying element '//*[@id="page-login"]/div/main/div[2]/div/section[1]/div[2]/form/div/div[2]/button' contains exact text 'Invalid Login. Try again.'.</msg>
+<msg time="2026-02-09T15:26:02.797382" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-15.png"&gt;&lt;img src="selenium-screenshot-15.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-02-09T15:26:02.797601" level="FAIL">The text of element '//*[@id="page-login"]/div/main/div[2]/div/section[1]/div[2]/form/div/div[2]/button' should have been 'Invalid Login. Try again.' but it was 'Verifying...'.</msg>
+<arg>${LOGIN_BUTTON}</arg>
+<arg>${LOGIN_TEXT_INVALID}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="FAIL" start="2026-02-09T15:26:02.662278" elapsed="0.136089">The text of element '//*[@id="page-login"]/div/main/div[2]/div/section[1]/div[2]/form/div/div[2]/button' should have been 'Invalid Login. Try again.' but it was 'Verifying...'.</status>
+</kw>
+<status status="FAIL" start="2026-02-09T15:26:02.661977" elapsed="0.136589">The text of element '//*[@id="page-login"]/div/main/div[2]/div/section[1]/div[2]/form/div/div[2]/button' should have been 'Invalid Login. Try again.' but it was 'Verifying...'.</status>
+</kw>
+<status status="FAIL" start="2026-02-09T15:26:02.436695" elapsed="0.362222">The text of element '//*[@id="page-login"]/div/main/div[2]/div/section[1]/div[2]/form/div/div[2]/button' should have been 'Invalid Login. Try again.' but it was 'Verifying...'.</status>
+</test>
+<test id="s1-t4" name="F01.1TC4 Login With Empty Email And Password" line="81">
+<kw name="Click Login">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-02-09T15:26:02.800792" level="INFO">Clicking button '//*[@id="page-login"]/div/main/div[2]/div/section[1]/div[2]/form/div/div[2]/button'.</msg>
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-09T15:26:02.800567" elapsed="0.141953"/>
+</kw>
+<status status="PASS" start="2026-02-09T15:26:02.800296" elapsed="0.142347"/>
+</kw>
+<kw name="Email Field Should Be Invalid">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2026-02-09T15:26:02.943658" level="INFO">Executing JavaScript:
+return document.getElementById('email').validity.valueMissing;
+Without any arguments.</msg>
+<msg time="2026-02-09T15:26:03.050841" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-16.png"&gt;&lt;img src="selenium-screenshot-16.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-02-09T15:26:03.051025" level="FAIL">JavascriptException: Message: javascript error: Cannot read properties of null (reading 'validity')
+  (Session info: chrome=144.0.7559.110)
+Stacktrace:
+Symbols not available. Dumping unresolved backtrace:
+	0x7ff74c62f3d5
+	0x7ff74c62f430
+	0x7ff74c3d10bd
+	0x7ff74c3d9021
+	0x7ff74c3dc4de
+	0x7ff74c47b0ed
+	0x7ff74c45589a
+	0x7ff74c479d08
+	0x7ff74c41cb0c
+	0x7ff74c41da53
+	0x7ff74c90b470
+	0x7ff74c90586d
+	0x7ff74c92621a
+	0x7ff74c64b235
+	0x7ff74c653a5c
+	0x7ff74c638844
+	0x7ff74c6389f6
+	0x7ff74c61eb87
+	0x7ffa85d1e8d7
+	0x7ffa8692c53c
+</msg>
+<arg>return document.getElementById('email').validity.valueMissing;</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="FAIL" start="2026-02-09T15:26:02.943237" elapsed="0.110928">JavascriptException: Message: javascript error: Cannot read properties of null (reading 'validity')
+  (Session info: chrome=144.0.7559.110)
+Stacktrace:
+Symbols not available. Dumping unresolved backtrace:
+	0x7ff74c62f3d5
+	0x7ff74c62f430
+	0x7ff74c3d10bd
+	0x7ff74c3d9021
+	0x7ff74c3dc4de
+	0x7ff74c47b0ed
+	0x7ff74c45589a
+	0x7ff74c479d08
+	0x7ff74c41cb0c
+	0x7ff74c41da53
+	0x7ff74c90b470
+	0x7ff74c90586d
+	0x7ff74c92621a
+	0x7ff74c64b235
+	0x7ff74c653a5c
+	0x7ff74c638844
+	0x7ff74c6389f6
+	0x7ff74c61eb87
+	0x7ffa85d1e8d7
+	0x7ffa8692c53c
+</status>
+</kw>
+<status status="FAIL" start="2026-02-09T15:26:02.942948" elapsed="0.111406">JavascriptException: Message: javascript error: Cannot read properties of null (reading 'validity')
+  (Session info: chrome=144.0.7559.110)
+Stacktrace:
+Symbols not available. Dumping unresolved backtrace:
+	0x7ff74c62f3d5
+	0x7ff74c62f430
+	0x7ff74c3d10bd
+	0x7ff74c3d9021
+	0x7ff74c3dc4de
+	0x7ff74c47b0ed
+	0x7ff74c45589a
+	0x7ff74c479d08
+	0x7ff74c41cb0c
+	0x7ff74c41da53
+	0x7ff74c90b470
+	0x7ff74c90586d
+	0x7ff74c92621a
+	0x7ff74c64b235
+	0x7ff74c653a5c
+	0x7ff74c638844
+	0x7ff74c6389f6
+	0x7ff74c61eb87
+	0x7ffa85d1e8d7
+	0x7ffa8692c53c
+</status>
+</kw>
+<kw name="Page Should Still Be Login Page">
+<status status="NOT RUN" start="2026-02-09T15:26:03.054736" elapsed="0.000049"/>
+</kw>
+<status status="FAIL" start="2026-02-09T15:26:02.799788" elapsed="0.255306">JavascriptException: Message: javascript error: Cannot read properties of null (reading 'validity')
+  (Session info: chrome=144.0.7559.110)
+Stacktrace:
+Symbols not available. Dumping unresolved backtrace:
+	0x7ff74c62f3d5
+	0x7ff74c62f430
+	0x7ff74c3d10bd
+	0x7ff74c3d9021
+	0x7ff74c3dc4de
+	0x7ff74c47b0ed
+	0x7ff74c45589a
+	0x7ff74c479d08
+	0x7ff74c41cb0c
+	0x7ff74c41da53
+	0x7ff74c90b470
+	0x7ff74c90586d
+	0x7ff74c92621a
+	0x7ff74c64b235
+	0x7ff74c653a5c
+	0x7ff74c638844
+	0x7ff74c6389f6
+	0x7ff74c61eb87
+	0x7ffa85d1e8d7
+	0x7ffa8692c53c
+</status>
+</test>
+<test id="s1-t5" name="F01.2TC1 Show Password" line="89">
+<kw name="Input Password">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-02-09T15:26:03.057571" level="INFO">Typing text 'Password123' into text field '//*[@id="login_password"]'.</msg>
+<arg>${PASSWORD_INPUT}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-09T15:26:03.057318" elapsed="0.074134"/>
+</kw>
+<arg>${VALID_PASSWORD}</arg>
+<status status="PASS" start="2026-02-09T15:26:03.056995" elapsed="0.074620"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-02-09T15:26:03.132285" level="INFO">Clicking element '//*[@id="page-login"]/div/main/div[2]/div/section[1]/div[2]/form/div/div[1]/div[2]/div/span'.</msg>
+<arg>${SHOW_PASSWORD_BTN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-09T15:26:03.131985" elapsed="0.287236"/>
+</kw>
+<kw name="Element Attribute Value Should Be" owner="SeleniumLibrary">
+<msg time="2026-02-09T15:26:03.525448" level="INFO">Element '//*[@id="login_password"]' attribute 'type' contains value 'text'.</msg>
+<arg>${PASSWORD_INPUT}</arg>
+<arg>type</arg>
+<arg>text</arg>
+<doc>Verifies element identified by ``locator`` contains expected attribute value.</doc>
+<status status="PASS" start="2026-02-09T15:26:03.419906" elapsed="0.105643"/>
+</kw>
+<status status="PASS" start="2026-02-09T15:26:03.056530" elapsed="0.469346"/>
+</test>
+<test id="s1-t6" name="F01.2TC2 Hide Password" line="94">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-02-09T15:26:03.527275" level="INFO">Clicking element '//*[@id="page-login"]/div/main/div[2]/div/section[1]/div[2]/form/div/div[1]/div[2]/div/span'.</msg>
+<arg>${SHOW_PASSWORD_BTN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-09T15:26:03.527036" elapsed="0.060621"/>
+</kw>
+<kw name="Element Attribute Value Should Be" owner="SeleniumLibrary">
+<msg time="2026-02-09T15:26:03.602217" level="INFO">Element '//*[@id="login_password"]' attribute 'type' contains value 'password'.</msg>
+<arg>${PASSWORD_INPUT}</arg>
+<arg>type</arg>
+<arg>password</arg>
+<doc>Verifies element identified by ``locator`` contains expected attribute value.</doc>
+<status status="PASS" start="2026-02-09T15:26:03.588050" elapsed="0.014278"/>
+</kw>
+<status status="PASS" start="2026-02-09T15:26:03.526605" elapsed="0.076018"/>
+</test>
+<test id="s1-t7" name="F01.2TC3 Navigate To Sign Up Page" line="98">
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2026-02-09T15:26:03.603842" level="INFO">Clicking link '//*[@id="page-login"]/div/main/div[2]/div/section[1]/div[3]/a'.</msg>
+<arg>${SIGNUP_LINK}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-09T15:26:03.603606" elapsed="0.070151"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-02-09T15:26:03.815833" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-17.png"&gt;&lt;img src="selenium-screenshot-17.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-02-09T15:26:03.815996" level="FAIL">Page should have contained text 'Sign Up' but did not.</msg>
+<arg>Sign Up</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="FAIL" start="2026-02-09T15:26:03.674098" elapsed="0.142619">Page should have contained text 'Sign Up' but did not.</status>
+</kw>
+<status status="FAIL" start="2026-02-09T15:26:03.603198" elapsed="0.213894">Page should have contained text 'Sign Up' but did not.</status>
+</test>
+<test id="s1-t8" name="F01.3TC1 Forgot Password With Registered Email" line="105">
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2026-02-09T15:26:03.818709" level="INFO">Clicking link '//*[@id="page-login"]/div/main/div[2]/div/section[1]/div[2]/form/div/div[1]/p/a'.</msg>
+<msg time="2026-02-09T15:26:03.910553" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-18.png"&gt;&lt;img src="selenium-screenshot-18.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-02-09T15:26:03.910731" level="FAIL">ElementNotInteractableException: Message: element not interactable
+  (Session info: chrome=144.0.7559.110); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#elementnotinteractableexception
+Stacktrace:
+Symbols not available. Dumping unresolved backtrace:
+	0x7ff74c62f3d5
+	0x7ff74c62f430
+	0x7ff74c3d0ea6
+	0x7ff74c42d8d4
+	0x7ff74c41eee6
+	0x7ff74c45589a
+	0x7ff74c41e766
+	0x7ff74c479d08
+	0x7ff74c41cb0c
+	0x7ff74c41da53
+	0x7ff74c90b470
+	0x7ff74c90586d
+	0x7ff74c92621a
+	0x7ff74c64b235
+	0x7ff74c653a5c
+	0x7ff74c638844
+	0x7ff74c6389f6
+	0x7ff74c61eb87
+	0x7ffa85d1e8d7
+	0x7ffa8692c53c
+</msg>
+<arg>${FORGOT_LINK}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="FAIL" start="2026-02-09T15:26:03.818467" elapsed="0.094353">ElementNotInteractableException: Message: element not interactable
+  (Session info: chrome=144.0.7559.110); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#elementnotinteractableexception
+Stacktrace:
+Symbols not available. Dumping unresolved backtrace:
+	0x7ff74c62f3d5
+	0x7ff74c62f430
+	0x7ff74c3d0ea6
+	0x7ff74c42d8d4
+	0x7ff74c41eee6
+	0x7ff74c45589a
+	0x7ff74c41e766
+	0x7ff74c479d08
+	0x7ff74c41cb0c
+	0x7ff74c41da53
+	0x7ff74c90b470
+	0x7ff74c90586d
+	0x7ff74c92621a
+	0x7ff74c64b235
+	0x7ff74c653a5c
+	0x7ff74c638844
+	0x7ff74c6389f6
+	0x7ff74c61eb87
+	0x7ffa85d1e8d7
+	0x7ffa8692c53c
+</status>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>${EMAIL_INPUT}</arg>
+<arg>${VALID_EMAIL}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-02-09T15:26:03.913190" elapsed="0.000047"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>Submit</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-02-09T15:26:03.913501" elapsed="0.000042"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<arg>Reset email sent</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="NOT RUN" start="2026-02-09T15:26:03.913807" elapsed="0.000042"/>
+</kw>
+<status status="FAIL" start="2026-02-09T15:26:03.817994" elapsed="0.096180">ElementNotInteractableException: Message: element not interactable
+  (Session info: chrome=144.0.7559.110); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#elementnotinteractableexception
+Stacktrace:
+Symbols not available. Dumping unresolved backtrace:
+	0x7ff74c62f3d5
+	0x7ff74c62f430
+	0x7ff74c3d0ea6
+	0x7ff74c42d8d4
+	0x7ff74c41eee6
+	0x7ff74c45589a
+	0x7ff74c41e766
+	0x7ff74c479d08
+	0x7ff74c41cb0c
+	0x7ff74c41da53
+	0x7ff74c90b470
+	0x7ff74c90586d
+	0x7ff74c92621a
+	0x7ff74c64b235
+	0x7ff74c653a5c
+	0x7ff74c638844
+	0x7ff74c6389f6
+	0x7ff74c61eb87
+	0x7ffa85d1e8d7
+	0x7ffa8692c53c
+</status>
+</test>
+<test id="s1-t9" name="F01.3TC2 Forgot Password With Unregistered Email" line="111">
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2026-02-09T15:26:03.916036" level="INFO">Clicking link '//*[@id="page-login"]/div/main/div[2]/div/section[1]/div[2]/form/div/div[1]/p/a'.</msg>
+<msg time="2026-02-09T15:26:04.006254" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-19.png"&gt;&lt;img src="selenium-screenshot-19.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-02-09T15:26:04.006427" level="FAIL">ElementNotInteractableException: Message: element not interactable
+  (Session info: chrome=144.0.7559.110); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#elementnotinteractableexception
+Stacktrace:
+Symbols not available. Dumping unresolved backtrace:
+	0x7ff74c62f3d5
+	0x7ff74c62f430
+	0x7ff74c3d0ea6
+	0x7ff74c42d8d4
+	0x7ff74c41eee6
+	0x7ff74c45589a
+	0x7ff74c41e766
+	0x7ff74c479d08
+	0x7ff74c41cb0c
+	0x7ff74c41da53
+	0x7ff74c90b470
+	0x7ff74c90586d
+	0x7ff74c92621a
+	0x7ff74c64b235
+	0x7ff74c653a5c
+	0x7ff74c638844
+	0x7ff74c6389f6
+	0x7ff74c61eb87
+	0x7ffa85d1e8d7
+	0x7ffa8692c53c
+</msg>
+<arg>${FORGOT_LINK}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="FAIL" start="2026-02-09T15:26:03.915778" elapsed="0.091943">ElementNotInteractableException: Message: element not interactable
+  (Session info: chrome=144.0.7559.110); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#elementnotinteractableexception
+Stacktrace:
+Symbols not available. Dumping unresolved backtrace:
+	0x7ff74c62f3d5
+	0x7ff74c62f430
+	0x7ff74c3d0ea6
+	0x7ff74c42d8d4
+	0x7ff74c41eee6
+	0x7ff74c45589a
+	0x7ff74c41e766
+	0x7ff74c479d08
+	0x7ff74c41cb0c
+	0x7ff74c41da53
+	0x7ff74c90b470
+	0x7ff74c90586d
+	0x7ff74c92621a
+	0x7ff74c64b235
+	0x7ff74c653a5c
+	0x7ff74c638844
+	0x7ff74c6389f6
+	0x7ff74c61eb87
+	0x7ffa85d1e8d7
+	0x7ffa8692c53c
+</status>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>${EMAIL_INPUT}</arg>
+<arg>unknown@test.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-02-09T15:26:04.008099" elapsed="0.000052"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>Submit</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-02-09T15:26:04.008424" elapsed="0.000043"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<arg>${ERROR_MESSAGE}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="NOT RUN" start="2026-02-09T15:26:04.008766" elapsed="0.000043"/>
+</kw>
+<status status="FAIL" start="2026-02-09T15:26:03.915301" elapsed="0.093840">ElementNotInteractableException: Message: element not interactable
+  (Session info: chrome=144.0.7559.110); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#elementnotinteractableexception
+Stacktrace:
+Symbols not available. Dumping unresolved backtrace:
+	0x7ff74c62f3d5
+	0x7ff74c62f430
+	0x7ff74c3d0ea6
+	0x7ff74c42d8d4
+	0x7ff74c41eee6
+	0x7ff74c45589a
+	0x7ff74c41e766
+	0x7ff74c479d08
+	0x7ff74c41cb0c
+	0x7ff74c41da53
+	0x7ff74c90b470
+	0x7ff74c90586d
+	0x7ff74c92621a
+	0x7ff74c64b235
+	0x7ff74c653a5c
+	0x7ff74c638844
+	0x7ff74c6389f6
+	0x7ff74c61eb87
+	0x7ffa85d1e8d7
+	0x7ffa8692c53c
+</status>
+</test>
+<test id="s1-t10" name="F01.4TC1 Login With LINE Email And Password" line="121">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-02-09T15:26:04.010999" level="INFO">Clicking element '//*[@id="page-login"]/div/main/div[2]/div/section[1]/div[2]/form/div/div[3]/div/div/a'.</msg>
+<msg time="2026-02-09T15:26:04.101318" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-20.png"&gt;&lt;img src="selenium-screenshot-20.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-02-09T15:26:04.101494" level="FAIL">ElementNotInteractableException: Message: element not interactable
+  (Session info: chrome=144.0.7559.110); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#elementnotinteractableexception
+Stacktrace:
+Symbols not available. Dumping unresolved backtrace:
+	0x7ff74c62f3d5
+	0x7ff74c62f430
+	0x7ff74c3d0ea6
+	0x7ff74c42d8d4
+	0x7ff74c41eee6
+	0x7ff74c45589a
+	0x7ff74c41e766
+	0x7ff74c479d08
+	0x7ff74c41cb0c
+	0x7ff74c41da53
+	0x7ff74c90b470
+	0x7ff74c90586d
+	0x7ff74c92621a
+	0x7ff74c64b235
+	0x7ff74c653a5c
+	0x7ff74c638844
+	0x7ff74c6389f6
+	0x7ff74c61eb87
+	0x7ffa85d1e8d7
+	0x7ffa8692c53c
+</msg>
+<arg>${LINE_LOGIN_BTN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="FAIL" start="2026-02-09T15:26:04.010748" elapsed="0.092014">ElementNotInteractableException: Message: element not interactable
+  (Session info: chrome=144.0.7559.110); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#elementnotinteractableexception
+Stacktrace:
+Symbols not available. Dumping unresolved backtrace:
+	0x7ff74c62f3d5
+	0x7ff74c62f430
+	0x7ff74c3d0ea6
+	0x7ff74c42d8d4
+	0x7ff74c41eee6
+	0x7ff74c45589a
+	0x7ff74c41e766
+	0x7ff74c479d08
+	0x7ff74c41cb0c
+	0x7ff74c41da53
+	0x7ff74c90b470
+	0x7ff74c90586d
+	0x7ff74c92621a
+	0x7ff74c64b235
+	0x7ff74c653a5c
+	0x7ff74c638844
+	0x7ff74c6389f6
+	0x7ff74c61eb87
+	0x7ffa85d1e8d7
+	0x7ffa8692c53c
+</status>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<arg>LINE Login</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="NOT RUN" start="2026-02-09T15:26:04.103129" elapsed="0.000051"/>
+</kw>
+<status status="FAIL" start="2026-02-09T15:26:04.010277" elapsed="0.093222">ElementNotInteractableException: Message: element not interactable
+  (Session info: chrome=144.0.7559.110); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#elementnotinteractableexception
+Stacktrace:
+Symbols not available. Dumping unresolved backtrace:
+	0x7ff74c62f3d5
+	0x7ff74c62f430
+	0x7ff74c3d0ea6
+	0x7ff74c42d8d4
+	0x7ff74c41eee6
+	0x7ff74c45589a
+	0x7ff74c41e766
+	0x7ff74c479d08
+	0x7ff74c41cb0c
+	0x7ff74c41da53
+	0x7ff74c90b470
+	0x7ff74c90586d
+	0x7ff74c92621a
+	0x7ff74c64b235
+	0x7ff74c653a5c
+	0x7ff74c638844
+	0x7ff74c6389f6
+	0x7ff74c61eb87
+	0x7ffa85d1e8d7
+	0x7ffa8692c53c
+</status>
+</test>
+<test id="s1-t11" name="F01.4TC2 Login With LINE QR Code" line="125">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-02-09T15:26:04.105323" level="INFO">Clicking element '//*[@id="page-login"]/div/main/div[2]/div/section[1]/div[2]/form/div/div[3]/div/div/a'.</msg>
+<msg time="2026-02-09T15:26:04.182513" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-21.png"&gt;&lt;img src="selenium-screenshot-21.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-02-09T15:26:04.182688" level="FAIL">ElementNotInteractableException: Message: element not interactable
+  (Session info: chrome=144.0.7559.110); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#elementnotinteractableexception
+Stacktrace:
+Symbols not available. Dumping unresolved backtrace:
+	0x7ff74c62f3d5
+	0x7ff74c62f430
+	0x7ff74c3d0ea6
+	0x7ff74c42d8d4
+	0x7ff74c41eee6
+	0x7ff74c45589a
+	0x7ff74c41e766
+	0x7ff74c479d08
+	0x7ff74c41cb0c
+	0x7ff74c41da53
+	0x7ff74c90b470
+	0x7ff74c90586d
+	0x7ff74c92621a
+	0x7ff74c64b235
+	0x7ff74c653a5c
+	0x7ff74c638844
+	0x7ff74c6389f6
+	0x7ff74c61eb87
+	0x7ffa85d1e8d7
+	0x7ffa8692c53c
+</msg>
+<arg>${LINE_LOGIN_BTN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="FAIL" start="2026-02-09T15:26:04.105071" elapsed="0.078870">ElementNotInteractableException: Message: element not interactable
+  (Session info: chrome=144.0.7559.110); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#elementnotinteractableexception
+Stacktrace:
+Symbols not available. Dumping unresolved backtrace:
+	0x7ff74c62f3d5
+	0x7ff74c62f430
+	0x7ff74c3d0ea6
+	0x7ff74c42d8d4
+	0x7ff74c41eee6
+	0x7ff74c45589a
+	0x7ff74c41e766
+	0x7ff74c479d08
+	0x7ff74c41cb0c
+	0x7ff74c41da53
+	0x7ff74c90b470
+	0x7ff74c90586d
+	0x7ff74c92621a
+	0x7ff74c64b235
+	0x7ff74c653a5c
+	0x7ff74c638844
+	0x7ff74c6389f6
+	0x7ff74c61eb87
+	0x7ffa85d1e8d7
+	0x7ffa8692c53c
+</status>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<arg>QR Code</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="NOT RUN" start="2026-02-09T15:26:04.184295" elapsed="0.000046"/>
+</kw>
+<status status="FAIL" start="2026-02-09T15:26:04.104621" elapsed="0.080048">ElementNotInteractableException: Message: element not interactable
+  (Session info: chrome=144.0.7559.110); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#elementnotinteractableexception
+Stacktrace:
+Symbols not available. Dumping unresolved backtrace:
+	0x7ff74c62f3d5
+	0x7ff74c62f430
+	0x7ff74c3d0ea6
+	0x7ff74c42d8d4
+	0x7ff74c41eee6
+	0x7ff74c45589a
+	0x7ff74c41e766
+	0x7ff74c479d08
+	0x7ff74c41cb0c
+	0x7ff74c41da53
+	0x7ff74c90b470
+	0x7ff74c90586d
+	0x7ff74c92621a
+	0x7ff74c64b235
+	0x7ff74c653a5c
+	0x7ff74c638844
+	0x7ff74c6389f6
+	0x7ff74c61eb87
+	0x7ffa85d1e8d7
+	0x7ffa8692c53c
+</status>
+</test>
+<test id="s1-t12" name="F01.4TC3 LINE Forgot Email Or Password" line="129">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-02-09T15:26:04.186449" level="INFO">Clicking element '//*[@id="page-login"]/div/main/div[2]/div/section[1]/div[2]/form/div/div[3]/div/div/a'.</msg>
+<msg time="2026-02-09T15:26:04.265734" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-22.png"&gt;&lt;img src="selenium-screenshot-22.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-02-09T15:26:04.265907" level="FAIL">ElementNotInteractableException: Message: element not interactable
+  (Session info: chrome=144.0.7559.110); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#elementnotinteractableexception
+Stacktrace:
+Symbols not available. Dumping unresolved backtrace:
+	0x7ff74c62f3d5
+	0x7ff74c62f430
+	0x7ff74c3d0ea6
+	0x7ff74c42d8d4
+	0x7ff74c41eee6
+	0x7ff74c45589a
+	0x7ff74c41e766
+	0x7ff74c479d08
+	0x7ff74c41cb0c
+	0x7ff74c41da53
+	0x7ff74c90b470
+	0x7ff74c90586d
+	0x7ff74c92621a
+	0x7ff74c64b235
+	0x7ff74c653a5c
+	0x7ff74c638844
+	0x7ff74c6389f6
+	0x7ff74c61eb87
+	0x7ffa85d1e8d7
+	0x7ffa8692c53c
+</msg>
+<arg>${LINE_LOGIN_BTN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="FAIL" start="2026-02-09T15:26:04.186212" elapsed="0.080955">ElementNotInteractableException: Message: element not interactable
+  (Session info: chrome=144.0.7559.110); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#elementnotinteractableexception
+Stacktrace:
+Symbols not available. Dumping unresolved backtrace:
+	0x7ff74c62f3d5
+	0x7ff74c62f430
+	0x7ff74c3d0ea6
+	0x7ff74c42d8d4
+	0x7ff74c41eee6
+	0x7ff74c45589a
+	0x7ff74c41e766
+	0x7ff74c479d08
+	0x7ff74c41cb0c
+	0x7ff74c41da53
+	0x7ff74c90b470
+	0x7ff74c90586d
+	0x7ff74c92621a
+	0x7ff74c64b235
+	0x7ff74c653a5c
+	0x7ff74c638844
+	0x7ff74c6389f6
+	0x7ff74c61eb87
+	0x7ffa85d1e8d7
+	0x7ffa8692c53c
+</status>
+</kw>
+<kw name="Click Link" owner="SeleniumLibrary">
+<arg>${LINE_FORGOT_LINK}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-02-09T15:26:04.267538" elapsed="0.000046"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<arg>LINE Help</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="NOT RUN" start="2026-02-09T15:26:04.267856" elapsed="0.000042"/>
+</kw>
+<status status="FAIL" start="2026-02-09T15:26:04.185774" elapsed="0.082434">ElementNotInteractableException: Message: element not interactable
+  (Session info: chrome=144.0.7559.110); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#elementnotinteractableexception
+Stacktrace:
+Symbols not available. Dumping unresolved backtrace:
+	0x7ff74c62f3d5
+	0x7ff74c62f430
+	0x7ff74c3d0ea6
+	0x7ff74c42d8d4
+	0x7ff74c41eee6
+	0x7ff74c45589a
+	0x7ff74c41e766
+	0x7ff74c479d08
+	0x7ff74c41cb0c
+	0x7ff74c41da53
+	0x7ff74c90b470
+	0x7ff74c90586d
+	0x7ff74c92621a
+	0x7ff74c64b235
+	0x7ff74c653a5c
+	0x7ff74c638844
+	0x7ff74c6389f6
+	0x7ff74c61eb87
+	0x7ffa85d1e8d7
+	0x7ffa8692c53c
+</status>
+</test>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-02-09T15:26:04.269637" elapsed="2.111361"/>
+</kw>
+<status status="FAIL" start="2026-02-09T15:25:58.859351" elapsed="7.521978"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="10" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="testRF02" id="s1" pass="2" fail="10" skip="0">testRF02</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
